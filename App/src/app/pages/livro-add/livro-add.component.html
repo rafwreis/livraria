@@ -1,0 +1,30 @@
+<div>
+  <form #livroForm="ngForm" (ngSubmit)="salvarClick()" >
+      <fieldset>
+        <legend>Livro</legend>
+        <mat-card>
+            <mat-card-content>
+              <div fxLayout="row" fxLayoutGap="20px" class="m-20">
+                <div fxFlex="20">
+                  <mat-form-field>
+                    <input matInput placeholder="Titulo" name="titulo" [(ngModel)]="livro.titulo" required>
+                </mat-form-field>
+                </div>
+              </div>
+              <div fxLayout="row" fxLayoutGap="20px" class="m-20">
+                <div>
+                  <button mat-raised-button type="submit" [disabled]="!livroForm.form.valid">
+                    <mat-icon>Salvar</mat-icon>
+                </button>
+                </div>
+                <div>
+                  <button mat-raised-button [routerLink]="['/livro']">
+                    <mat-icon>Voltar</mat-icon>
+                </button>
+                </div>
+              </div>
+            </mat-card-content>
+          </mat-card>
+      </fieldset>
+  </form>
+</div>
